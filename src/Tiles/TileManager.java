@@ -19,11 +19,14 @@ public class TileManager {
         getTileImage();
     }
 
+    //REFACTOR THIS
     public void getTileImage(){
 
         try{
+            //Grass
             tile[0] = new Tile();
             tile[0].image = ImageIO.read(getClass().getResourceAsStream("/grass01.png"));
+            //
 
         }catch(IOException e){
             e.printStackTrace();
