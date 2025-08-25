@@ -35,8 +35,8 @@ public class Player extends Entity {
     
     public void setDefaultValues(){
         //start pos
-        worldX = 100;
-        worldY = 100;
+        worldX = 1056;
+        worldY = 908;
         speed = 4;
         direction = "down";
         moving = false;
