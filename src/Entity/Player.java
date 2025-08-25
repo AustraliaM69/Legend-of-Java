@@ -46,7 +46,7 @@ public class Player extends Entity {
         
         try {
             // Load sprite sheet - adjust path and sprite size as needed
-            SpriteSheet spriteSheet = new SpriteSheet("/res/player_spritesheet.png", 16, 16);
+            SpriteSheet spriteSheet = new SpriteSheet("/res/characterSheet.png", 16, 16);
             
             // Check if sprite sheet loaded successfully
             if (spriteSheet.getSpriteSheet() == null) {
