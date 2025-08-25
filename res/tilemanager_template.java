@@ -1,3 +1,6 @@
+// Auto-generated TileManager code
+// Copy this to src/Tiles/TileManager.java
+
 package Tiles;
 
 import Main.GamePanel;
@@ -12,27 +15,18 @@ public class TileManager {
     GamePanel gp;
     Tile[] tile;
     TileSheet tileSheet;
-    TileSheet tileSheet2; // For additional tiles
-    
-    // Map data - this will eventually come from Tiled
     int[][] mapTileNum;
 
     public TileManager(GamePanel gp){
         this.gp = gp;
-        tile = new Tile[35]; // Auto-sized for current tiles
+        tile = new Tile[45]; // Auto-sized
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
-        
-        // Load tile sheets
         tileSheet = new TileSheet("/tilesheet.png", 16, 12, 6);
-        // tileSheet2 = new TileSheet("/tilesheet2.png", 16, 12, 6); // For future use
-        
         getTileImage();
         loadMap();
     }
 
     public void getTileImage(){
-        // Auto-generated tile definitions - DO NOT EDIT MANUALLY
-        // Use AutoTileManager to regenerate this code when adding new tiles
         tile[0] = new Tile(0, 0, false); // earth
         tile[1] = new Tile(1, 0, false); // floor01
         tile[2] = new Tile(2, 0, false); // grass00
@@ -69,26 +63,16 @@ public class TileManager {
         tile[33] = new Tile(9, 2, true); // water12
         tile[34] = new Tile(10, 2, true); // water13
     }
-    
+
     public void loadMap() {
-        // For now, create a simple test map
-        // This will be replaced with Tiled map loading
+        // TODO: Load from Tiled map file
         for (int col = 0; col < gp.maxScreenCol; col++) {
             for (int row = 0; row < gp.maxScreenRow; row++) {
-                // Create a simple pattern
-                if (row == 0 || row == gp.maxScreenRow - 1 || col == 0 || col == gp.maxScreenCol - 1) {
-                    mapTileNum[col][row] = 31; // Wall
-                } else if (row == 6 && col > 2 && col < 13) {
-                    mapTileNum[col][row] = 16; // Road
-                } else if (row > 8 && col > 5 && col < 10) {
-                    mapTileNum[col][row] = 2; // Water
-                } else {
-                    mapTileNum[col][row] = 0; // Grass
-                }
+                mapTileNum[col][row] = 0; // Default to grass
             }
         }
     }
-    
+
     public void draw(Graphics2D g2){
         int col = 0;
         int row = 0;
@@ -96,20 +80,15 @@ public class TileManager {
         int y = 0;
 
         while(col < gp.maxScreenCol && row < gp.maxScreenRow){
-            
             int tileNum = mapTileNum[col][row];
-            
             if (tileNum >= 0 && tileNum < tile.length && tile[tileNum] != null) {
-                // Get tile image from sheet
                 BufferedImage tileImage = tileSheet.getTile(tile[tileNum].sheetX, tile[tileNum].sheetY);
                 if (tileImage != null) {
                     g2.drawImage(tileImage, x, y, gp.tileSize, gp.tileSize, null);
                 }
             }
-            
             col++;
             x += gp.tileSize;
-
             if(col == gp.maxScreenCol){
                 col = 0;
                 x = 0;

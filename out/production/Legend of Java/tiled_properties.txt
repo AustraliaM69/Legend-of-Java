@@ -1,0 +1,178 @@
+# Auto-generated Tiled properties
+# Copy these properties for each tile in Tiled
+
+# earth (ID: 0, Collision: false)
+tile_id: 0
+collision: false
+description: Earth tile
+
+# floor01 (ID: 1, Collision: false)
+tile_id: 1
+collision: false
+description: Floor tile
+
+# grass00 (ID: 2, Collision: false)
+tile_id: 2
+collision: false
+description: Grass tile
+
+# grass01 (ID: 3, Collision: false)
+tile_id: 3
+collision: false
+description: Grass tile
+
+# hut (ID: 4, Collision: true)
+tile_id: 4
+collision: true
+description: Building
+
+# road00 (ID: 5, Collision: false)
+tile_id: 5
+collision: false
+description: Road tile
+
+# road01 (ID: 6, Collision: false)
+tile_id: 6
+collision: false
+description: Road tile
+
+# road02 (ID: 7, Collision: false)
+tile_id: 7
+collision: false
+description: Road tile
+
+# road03 (ID: 8, Collision: false)
+tile_id: 8
+collision: false
+description: Road tile
+
+# road04 (ID: 9, Collision: false)
+tile_id: 9
+collision: false
+description: Road tile
+
+# road05 (ID: 10, Collision: false)
+tile_id: 10
+collision: false
+description: Road tile
+
+# road06 (ID: 11, Collision: false)
+tile_id: 11
+collision: false
+description: Road tile
+
+# road07 (ID: 12, Collision: false)
+tile_id: 12
+collision: false
+description: Road tile
+
+# road08 (ID: 13, Collision: false)
+tile_id: 13
+collision: false
+description: Road tile
+
+# road09 (ID: 14, Collision: false)
+tile_id: 14
+collision: false
+description: Road tile
+
+# road10 (ID: 15, Collision: false)
+tile_id: 15
+collision: false
+description: Road tile
+
+# road11 (ID: 16, Collision: false)
+tile_id: 16
+collision: false
+description: Road tile
+
+# road12 (ID: 17, Collision: false)
+tile_id: 17
+collision: false
+description: Road tile
+
+# table01 (ID: 18, Collision: true)
+tile_id: 18
+collision: true
+description: Table object
+
+# tree (ID: 19, Collision: true)
+tile_id: 19
+collision: true
+description: Tree obstacle
+
+# wall (ID: 20, Collision: true)
+tile_id: 20
+collision: true
+description: Solid wall
+
+# water00 (ID: 21, Collision: true)
+tile_id: 21
+collision: true
+description: Water tile
+
+# water01 (ID: 22, Collision: true)
+tile_id: 22
+collision: true
+description: Water tile
+
+# water02 (ID: 23, Collision: true)
+tile_id: 23
+collision: true
+description: Water tile
+
+# water03 (ID: 24, Collision: true)
+tile_id: 24
+collision: true
+description: Water tile
+
+# water04 (ID: 25, Collision: true)
+tile_id: 25
+collision: true
+description: Water tile
+
+# water05 (ID: 26, Collision: true)
+tile_id: 26
+collision: true
+description: Water tile
+
+# water06 (ID: 27, Collision: true)
+tile_id: 27
+collision: true
+description: Water tile
+
+# water07 (ID: 28, Collision: true)
+tile_id: 28
+collision: true
+description: Water tile
+
+# water08 (ID: 29, Collision: true)
+tile_id: 29
+collision: true
+description: Water tile
+
+# water09 (ID: 30, Collision: true)
+tile_id: 30
+collision: true
+description: Water tile
+
+# water10 (ID: 31, Collision: true)
+tile_id: 31
+collision: true
+description: Water tile
+
+# water11 (ID: 32, Collision: true)
+tile_id: 32
+collision: true
+description: Water tile
+
+# water12 (ID: 33, Collision: true)
+tile_id: 33
+collision: true
+description: Water tile
+
+# water13 (ID: 34, Collision: true)
+tile_id: 34
+collision: true
+description: Water tile
+
