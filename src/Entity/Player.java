@@ -10,6 +10,9 @@ public class Player extends Entity {
 
     GamePanel gp;
     KeyHandler keyH;
+
+    public final int screenX;
+    public final int screenY;
     
     // Animation arrays for different directions
     private BufferedImage[] idleSprites;
@@ -22,13 +25,18 @@ public class Player extends Entity {
         this.gp = gp;
         this.keyH = keyH;
 
+        //Halfway through the screen.
+        screenX = gp.screenWidth / 2 -(gp.tileSize/2);
+        screenY = gp.screenHeight / 2 -(gp.tileSize/2);
+
         setDefaultValues();
         loadSprites();
     }
     
     public void setDefaultValues(){
-        x = 100;
-        y = 100;
+        //start pos
+        worldX = 100;
+        worldY = 100;
         speed = 4;
         direction = "down";
         moving = false;
@@ -97,22 +105,22 @@ public class Player extends Entity {
         if(keyH.upPressed == true){
             direction = "up";
             moving = true;
-            y -= speed;
+            worldY -= speed;
         }
         if(keyH.downPressed == true){
             direction = "down";
             moving = true;
-            y += speed;
+            worldY += speed;
         }
         if(keyH.leftPressed == true){
             direction = "left";
             moving = true;
-            x -= speed;
+            worldX -= speed;
         }
         if(keyH.rightPressed == true){
             direction = "right";
             moving = true;
-            x += speed;
+            worldX += speed;
         }
         
         // Update animation
@@ -172,11 +180,11 @@ public class Player extends Entity {
     public void draw(Graphics2D g2){
         if (sprite != null) {
             // Draw the sprite scaled to tile size
-            g2.drawImage(sprite, x, y, gp.tileSize, gp.tileSize, null);
+            g2.drawImage(sprite, screenX, screenY, gp.tileSize, gp.tileSize, null);
         } else {
             // Fallback to colored rectangle if sprite is null
             g2.setColor(Color.WHITE);
-            g2.fillRect(x, y, gp.tileSize, gp.tileSize);
+            g2.fillRect(screenX, screenY, gp.tileSize, gp.tileSize);
         }
     }
 }
