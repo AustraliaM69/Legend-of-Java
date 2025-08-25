@@ -1,0 +1,19 @@
+Player Sprite Sheet Information:
+===============================
+
+Expected sprite sheet structure:
+- File: player_spritesheet.png
+- Sprite size: 16x16 pixels (original size, will be scaled by 3x in game)
+- Layout: 5 rows x 4 columns = 20 sprites total
+
+Row 0: Idle animations (4 frames)
+Row 1: Walking down animations (4 frames)  
+Row 2: Walking left animations (4 frames)
+Row 3: Walking right animations (4 frames)
+Row 4: Walking up animations (4 frames)
+
+Each sprite should be 16x16 pixels with transparent background.
+The game will scale these to 48x48 pixels (3x scale).
+
+Note: You'll need to create or obtain an actual PNG sprite sheet file
+named "player_spritesheet.png" and place it in the res folder.

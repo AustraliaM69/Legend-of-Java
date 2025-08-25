@@ -1,0 +1,21 @@
+package Entity;
+
+import java.awt.image.BufferedImage;
+
+public class Entity {
+
+    public int x, y;
+    public int speed;
+    
+    // Sprite and animation properties
+    public BufferedImage sprite;
+    public BufferedImage[] sprites;
+    public int spriteCounter = 0;
+    public int spriteNum = 0;
+    public int animationSpeed = 10; // Lower = faster animation
+    public int animationCounter = 0;
+    
+    // Direction for animations
+    public String direction = "down"; // down, up, left, right
+    public boolean moving = false;
+}
