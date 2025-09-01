@@ -11,8 +11,11 @@ import javax.imageio.ImageIO;
 public class TileManager {
 
     GamePanel gp;
-    Tile[] tile;
-    int mapTileNumber[][];
+    public Tile[] tile;
+    public int mapTileNumber[][];
+    public boolean[][] collisionMap;
+
+
 
     int numberOfTiles = 37; // CHANGE THIS IF ADDING OR REMOVING ANY TILES IN TILE FOLDER
 
@@ -22,9 +25,11 @@ public class TileManager {
 
         tile = new Tile[numberOfTiles];
         mapTileNumber = new int[gp.maxWorldCol][gp.maxWorldRow];
+        collisionMap = new boolean[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
         loadMap("/maps/bigmap.csv");
+        loadCollisionMap("/maps/bigmapCollisions.csv");
     }
 
     //Tile loader || Add tiles to tile folder, update length of array.
@@ -71,6 +76,31 @@ public class TileManager {
             throw new RuntimeException(e);
         }
     }
+
+    //Load collision tiles ||  0 is no collision, 1 is collision. Loop over map again and set tile collisions.
+    public void loadCollisionMap(String path) {
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(getClass().getResourceAsStream(path)))) {
+
+            int row = 0;
+            while (row < gp.maxWorldRow) {
+                String line = br.readLine();
+                if (line == null) break;
+
+                String[] numbers = line.split(",");
+                for (int col = 0; col < gp.maxWorldCol; col++) {
+                    int num = Integer.parseInt(numbers[col].trim());
+                    collisionMap[col][row] = (num == 1); // 1 = solid
+                }
+
+                row++;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to load collision map: " + path, e);
+        }
+    }
+
+
 
     public void draw(Graphics2D g2){
 

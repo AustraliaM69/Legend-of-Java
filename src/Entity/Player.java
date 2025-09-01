@@ -29,6 +29,9 @@ public class Player extends Entity {
         screenX = gp.screenWidth / 2 -(gp.tileSize/2);
         screenY = gp.screenHeight / 2 -(gp.tileSize/2);
 
+        //Colision hitbox
+        solidArea = new Rectangle(8, 16 , 32, 32);
+
         setDefaultValues();
         loadSprites();
     }
@@ -104,23 +107,41 @@ public class Player extends Entity {
         
         if(keyH.upPressed == true){
             direction = "up";
-            moving = true;
-            worldY -= speed;
         }
         if(keyH.downPressed == true){
             direction = "down";
-            moving = true;
-            worldY += speed;
         }
         if(keyH.leftPressed == true){
             direction = "left";
-            moving = true;
-            worldX -= speed;
         }
         if(keyH.rightPressed == true){
             direction = "right";
-            moving = true;
-            worldX += speed;
+        }
+
+        //Check Tile Collisions
+        collisionOn = false;
+        gp.collisionChecker.checkTile(this);
+
+        //if collision is false, player can move
+        if(!collisionOn){
+            switch(direction){
+                case"up":
+                    moving = true;
+                    worldY -= speed;
+                    break;
+                case"down":
+                    moving = true;
+                    worldY += speed;
+                    break;
+                case"left":
+                    moving = true;
+                    worldX -= speed;
+                    break;
+                case"right":
+                    moving = true;
+                    worldX += speed;
+                    break;
+            }
         }
         
         // Update animation
